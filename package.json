@@ -1,0 +1,25 @@
+{
+  "name": "stUSDT-subgraph",
+  "version": "0.0.1",
+  "repository": "https://github.com/consensyx/stUSDT-subgraph",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "create-local": "graph create stUSDT-graph --node http://localhost:8020",
+    "deploy-local": "graph deploy stUSDT-graph --debug --ipfs http://localhost:5001 --node http://localhost:8020",
+    "deploy": "graph deploy stUSDT-graph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
+    "deploy-dev": "graph deploy stUSDT-graph --ipfs http://35.197.14.14:5000/ --node http://35.197.14.14:8020/ --debug",
+    "watch-local": "graph deploy stUSDT-graph --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+  },
+
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.52.0",
+    "@graphprotocol/graph-ts": "^0.31.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.2"
+  }
+}

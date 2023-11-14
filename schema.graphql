@@ -1,0 +1,36 @@
+type Factory @entity {
+  id: Bytes!
+  poolCount: BigInt!
+}
+
+type Pool @entity {
+  id: Bytes!
+  subscribeUser: [SubscribeUser!]! @derivedFrom(field: "pool")
+  redeemUser: [RedeemUser!]! @derivedFrom(field: "pool")
+}
+
+type SubscribeUser @entity {
+  id: Bytes!
+  account: Bytes!
+  amount: BigInt!
+  pool: Pool!
+}
+
+type RedeemUser @entity {
+  id: Bytes!
+  account: Bytes!
+  shares: BigInt!
+  pool: Pool!
+}
+
+type Subscribe @entity {
+  id: Bytes!
+  account: Bytes!
+  amount: BigInt!
+}
+
+type Redeem @entity {
+  id: Bytes!
+  account: Bytes!
+  shares: BigInt!
+}
